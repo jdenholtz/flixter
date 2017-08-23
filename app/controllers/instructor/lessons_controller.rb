@@ -11,6 +11,7 @@ class Instructor::LessonsController < ApplicationController
     @lesson = current_section.lessons.create(lesson_params)
     redirect_to instructor_course_path(current_section.course)
   end
+  
 
   private
 
