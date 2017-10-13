@@ -11,6 +11,7 @@ class Instructor::CoursesController < ApplicationController
     if @course.valid?
       redirect_to instructor_course_path(@course)
     else
+      puts current_user
       render :new, status: :unprocessable_entity
     end
   end
