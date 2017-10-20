@@ -187,21 +187,25 @@ ul .header .fa {
 
 .course-descriptions-left {
   color: white;
-  padding: 10px;
+  padding-left: 0px;
 }
 
 .course-descriptions {
   color: white;
   text-align: center;
-  padding: 10px;
+  padding-left: 25px;
 }
 
 .simple-form {
   background: image_url('bkrnd-8.jpg') no-repeat center center fixed;
   border-radius: 10px;
   color: white;
-  
 }
+
+.simple-form p {
+  margin-bottom: 0px;
+}
+
 
 .btn-primary {
   color: black;
