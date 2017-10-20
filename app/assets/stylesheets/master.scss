@@ -185,14 +185,18 @@ ul .header .fa {
   color: black;
 }
 
+.course-descriptions-left {
+  color: white;
+  padding: 10px;
+}
 
-.course-descriptions{
+.course-descriptions {
   color: white;
   text-align: center;
   padding: 10px;
 }
 
-.simple-form{
+.simple-form {
   background: image_url('bkrnd-8.jpg') no-repeat center center fixed;
   border-radius: 10px;
   color: white;
@@ -214,12 +218,15 @@ ul .header .fa {
   background: radial-gradient(white, black); /* Standard syntax */
 }
 
-.btn-secondary{
+.btn-secondary {
   border-radius: 25px;
 }
 
-.ui-sortable-handle{
+.ui-sortable-handle {
   opacity: 0.85;
   border-radius: 15px;
 }
 
+#my-video{
+  border: 1px solid white;
+}

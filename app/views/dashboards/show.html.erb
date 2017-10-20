@@ -2,14 +2,21 @@
 
 <div class="col-10 offset-1">
   <h1 class="text-center" >What I'm Learning</h1>
+  <br />
   <% current_user.enrolled_courses.each do |course| %>
     <div class="booyah-box main-bkrnd">
       <h3 class="text-center course-titles">
         <%= link_to course.title, course_path(course) %>        
       </h3>
-      <br />
-      <%= image_tag course.image, class: 'img-fluid' %>
-      <br />
+
+      <div class="row">
+        <div class="col-10 offset-1">
+           <br />
+           <%= image_tag course.image, class: 'img-fluid' %>
+           <br />
+         </div>
+       </div>
+     
       <div class="row">
         <div class="col-12 col-sm-8 course-descriptions">
           <%= course.description %>
@@ -27,14 +34,19 @@
 
 
   <h1 class="text-center">What I'm Teaching</h1>
+  <br />
   <% current_user.courses.each do |course| %>
     <div class="booyah-box main-bkrnd">
       <h3 class="text-center course-titles">
         <%= link_to course.title, course_path(course) %>
       </h3>
-      <br />
-      <%= image_tag course.image, class: 'img-fluid' %>
-      <br />
+      <div class="row">
+        <div class="col-10 offset-1">
+           <br />
+           <%= image_tag course.image, class: 'img-fluid' %>
+           <br />
+         </div>
+      </div>
       <div class="row">
         <div class="col-12 col-sm-8 course-descriptions">
           <%= course.description %>
