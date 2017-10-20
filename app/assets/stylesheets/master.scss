@@ -88,7 +88,8 @@ body{
 
 .lesson {
   background-color: black;
-  margin-top: 10px;
+  border-radius: 10px;
+  color: white !important;
 }
 
 .lesson a {
@@ -107,6 +108,11 @@ body{
 .lesson a b {
   font-weight: 100;
   font-size: 25px;
+  color: white;
+}
+
+#lesson-subtitle{
+  color: white;  
 }
 
 
@@ -118,10 +124,20 @@ body{
   font-weight: 100;
   padding: 8px;
   font-size: 15px;
+  border-radius: 10px;
+
 }
 
 .lessons li p {
   margin: 0;
+}
+
+#hr-white {
+  background: white;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .section {
@@ -147,4 +163,57 @@ ul .header {
 
 ul .header .fa {
   font-size: 20px;
+}
+
+.main-bkrnd {
+  background: image_url('bkrnd-8.jpg') no-repeat center center fixed;
+  border-radius: 10px;
+}
+
+.course-titles a{
+  color: black;
+  opacity: 1;
+}
+
+.course-titles{
+  background: white;
+  opacity: 0.85;
+  border-radius: 15px;
+  padding: 10px;
+  margin:  10px;
+  color: black;
+}
+
+.course-titles a {
+  color: white;
+  marign-top: 0px;
+
+}
+
+.course-descriptions{
+  color: white;
+  text-align: center;
+  padding: 10px;
+
+}
+
+.btn-primary {
+  background: white;
+  color: black;
+  
+  border-radius: 25px;
+  -moz-box-shadow: 1px 1px 2px 0 black;
+  -webkit-box-shadow: 1px 1px 2px 0 black;
+  box-shadow: 1px 1px 2px 0 black;
+  border: 1px solid #ccc;
+  border-color: black;
+  background: -webkit-radial-gradient(white 80%, black 5%); /* Safari 5.1-6.0 */
+  background: -o-radial-gradient(white 80%, black 5%); /* For Opera 11.6-12.0 */
+  background: -moz-radial-gradient(white 80%, black 5%); /* For Firefox 3.6-15 */
+  background: radial-gradient(white, black); /* Standard syntax */
+}
+
+.ui-sortable-handle{
+  opacity: 0.85;
+  border-radius: 15px;
 }

@@ -34,35 +34,42 @@
 </script>
 
 <br />
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%= current_course.title %></h1>
+<div class="booyah-box col-10 offset-1 main-bkrnd">
+  <h1 class="text-center course-titles">
+    <%= current_course.title %>
+  </h1>
+  <div class="text-center">
+    <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-primary btn-sm' %>
+    <br class="clr" />
+  </div>
+  <br />
+
   <div class="col-10 offset-1">
     <%= image_tag current_course.image, class: 'img-fluid' %>
   </div>
   <br />
-  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
-  <br class="clr" />
+  
   
   <div class="text-center">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
+    <button type="button" class="btn btn-primary btn-nd" data-toggle="modal" data-target="#newSectionModal">
       Add a new section...
     </button>
   </div>
 
   <ul class="sections">
     <% current_course.sections.rank(:row_order).each do |section| %>
-      <li data-update-url="<%= instructor_section_path(section) %>" class="section-li">
+      <li data-update-url="<%= instructor_section_path(section) %>" class="course-titles">
         <div class="header">
           <span class="fa fa-ellipsis-v"></span>
           <%= section.title %>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-sm float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+            New Lesson...
+          </button>
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
-          New Lesson...
-        </button>
+        
 
-        <br class="clr" />
         <br class="clr" />
         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
@@ -72,9 +79,10 @@
                   <br />
                   <span class="fa fa-ellipsis-v"></span>
                 </div>
-                <div class="col-11 text-center">
+                <div class="col-11 offset-1 text-center">
                   <p>
                     <b><%= lesson.title %></b>
+                    <hr id="hr-white">
                   </p>
                   <p>
                     <%= lesson.subtitle %>
