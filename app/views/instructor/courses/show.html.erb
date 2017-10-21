@@ -35,11 +35,11 @@
 
 <br />
 <div class="booyah-box col-10 offset-1 main-bkrnd">
-  <h1 class="text-center course-titles">
+  <h1 class="text-center course-titles white-box">
     <%= current_course.title %>
   </h1>
   <div class="text-center">
-    <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-primary btn-sm' %>
+    <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-primary btn-md' %>
     <br class="clr" />
   </div>
   <br />
@@ -48,7 +48,6 @@
     <%= image_tag current_course.image, class: 'img-fluid outline-photo' %>
   </div>
   <br />
-  
   
   <div class="text-center">
     <!-- Button trigger modal -->
@@ -59,12 +58,12 @@
 
   <ul class="sections">
     <% current_course.sections.rank(:row_order).each do |section| %>
-      <li data-update-url="<%= instructor_section_path(section) %>" class="course-titles">
+      <li data-update-url="<%= instructor_section_path(section) %>" class="course-titles white-box">
         <div class="header">
           <span class="fa fa-ellipsis-v"></span>
           <%= section.title %>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-sm float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+          <button type="button" class="btn btn-primary btn-md float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
             Add a Lesson...
           </button>
         </div>

@@ -5,7 +5,7 @@
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 200;
   box-shadow: 0px 1px 3px #2a2a2a;
-  background: image_url('carbon_fibre.png');
+  background: image_url('bkrnd-8.jpg');
 }
 
 .navbar-inverse a.navbar-brand {
@@ -136,8 +136,8 @@ body{
   background: white;
   padding-top: 0px;
   margin-top: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .section {
@@ -171,29 +171,36 @@ ul .header .fa {
   border-radius: 10px;
 }
 
-.course-titles a{
+
+.white-box{
+  background: white;
+  opacity: 0.85;
+}
+
+.white-box a {
   color: black;
   opacity: 1;
 }
 
+#solid-blk-txt {
+    color: black;
+    opacity: 1;
+}
+
 .course-titles{
-  background: white;
-  opacity: 0.85;
   border-radius: 15px;
   padding: 10px;
   margin:  10px;
-  color: black;
+
 }
 
-.course-descriptions-left {
-  color: white;
-  padding-left: 0px;
+.enrollment-box {
+  padding: 0px;
 }
 
 .course-descriptions {
   color: white;
   text-align: center;
-  padding-left: 25px;
 }
 
 .simple-form {
@@ -226,6 +233,14 @@ ul .header .fa {
   border-radius: 25px;
 }
 
+.stripe-button-el span{
+  background: black;
+  background-image: radial-gradient(white, black);
+}
+#hide {
+  display: none;
+}
+
 .ui-sortable-handle {
   opacity: 0.85;
   border-radius: 15px;
@@ -236,5 +251,9 @@ ul .header .fa {
 }
 
 .outline-photo {
- border: 1px solid white; 
+ border: 2px solid white; 
+}
+
+.badge-info{
+  color: black
 }

@@ -2,60 +2,91 @@
 <br />
 
 <div class="booyah-box col-10 offset-1 main-bkrnd">
-  <h1 class="text-center course-titles"><%= @course.title %></h1>
-  <div class="col-10 offset-1">
-    <%= image_tag @course.image, class: 'img-fluid outline-photo' %>
+  <h1 class="text-center course-titles white-box"><%= @course.title %></h1>
+  <div class="text-center">
+    <% if current_user && current_user == @course.user %>
+      <%= link_to '     Administer     ', instructor_course_path(@course), class: 'btn btn-primary btn-md' %>
+    <% end %>
   </div>
   <br />
+  
+  <% if ! @course.image.blank? %>
+    <div class="col-10 offset-1">
+      <%= image_tag @course.image, class: 'img-fluid outline-photo' %>
+    </div>
+    <br />
+  <% end %>
+
+
+
   <div class="row">
-    <div class="col-sm-4 col-12 text-center">
-      <span class="badge badge-default">
-        <%= number_to_currency @course.cost %>
-      </span>
+    <div class="col-sm-10 offset-1 col-12">
 
-      <% if current_user && current_user == @course.user %>
-        <br />
-        <br />
-        <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-primary btn-large' %>
-      <% end %>
-      <br />
-      <br />
+      <div class="row">
+        <div class="col-sm-9 col-12 course-descriptions">
+          <%= @course.description %>
+        </div>
 
-      <% if current_user %>
-        <% if current_user.enrolled_in?(@course) %>
-          <h3 class="badge badge-info">You Are Enrolled!</h3>
-        <% else %>
+        <div class="col-sm-3 col-12 text-center enrollment-box">
+          <span class="badge badge-default">
+            <%= number_to_currency @course.cost %>
+          </span>
+          <br />
+          <br />
 
-          <% if @course.free? %>
-            <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
-          <% else %>
-              <%= form_tag course_enrollments_path(@course) do %>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-email="<%= current_user.email %>"
-                        data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
-                        data-amount="<%= (@course.cost * 100).to_i %>"
-                        data-locale="auto"></script>
+          <% if current_user %>
+            <% if current_user.enrolled_in?(@course) %>
+              <h3 class="badge badge-info white-box">You Are Enrolled!</h3>
+            <% else %>
+
+              <% if @course.free? %>
+                <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+              <% else %>              
+                <%= form_tag course_enrollments_path(@course) do %>
+                  <div id="hide">
+                        <script src="https://checkout.stripe.com/checkout.js" id="hide" class="stripe-button"
+                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                              data-email="<%= current_user.email %>"
+                              data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+                              data-amount="<%= (@course.cost * 100).to_i %>"
+                              data-locale="auto"></script>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-sm">
+                     <span>Enroll (Pay with Card)</span>
+                  </button>
+                <% end %>
+               
+                
               <% end %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <h3 class="badge badge-info">Sign In to Enroll!</h3>
-      <% end %>  
+            <% end %>
+          <% else %>
+            <h3 class="badge badge-info white-box">Sign In to Enroll!</h3>
+          <% end %>  
+        </div>
+      </div>
     </div>
 
-    <div class="col-sm-8 col-12 course-descriptions-left">
-      <%= @course.description %>
-    </div>
   </div>
+
+
+
+
+
+
+
+
+
+
   <br />
   <br />
   <hr id="hr-white">
+  <br />
+  <br />
 
   <div class="col-12">
     <% @course.sections.rank(:row_order).each do |section| %>
       <br />
-      <div class="section text-center course-titles">
+      <div class="section text-center course-titles white-box">
         <h3>
           <%= section.title %>
         </h3>

@@ -5,26 +5,36 @@
   <br />
   <% current_user.enrolled_courses.each do |course| %>
     <div class="booyah-box main-bkrnd">
-      <h3 class="text-center course-titles">
+      <h3 class="text-center white-box course-titles">
         <%= link_to course.title, course_path(course) %>        
       </h3>
 
-      <div class="row">
-        <div class="col-10 offset-1">
-           <br />
-           <%= image_tag course.image, class: 'img-fluid outline-photo' %>
-           <br />
-         </div>
-       </div>
-     
-      <div class="row">
-        <div class="col-12 col-sm-8 course-descriptions">
-          <%= course.description %>
+      
+      <% if ! course.image.blank? %>
+        <div class="row">
+          <div class="col-10 offset-1">
+             <br />
+             <%= image_tag course.image, class: 'img-fluid outline-photo' %>
+          </div>
         </div>
-        <div class="col-12 col-sm-4 text-center">
-          <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
+        <br />
+      <% end %>
+     
+
+      <div class="row">
+        <div class="col-sm-10 offset-1 col-12">
+          <div class="row">
+            <div class="col-12 col-sm-9 course-descriptions">
+              <%= course.description %>
+            </div>
+            <div class="col-12 col-sm-3 text-center">
+              <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
+            </div>
+          </div>
         </div>
       </div>
+
+
       <br class="clr" />
     </div>
     <br />
@@ -37,24 +47,34 @@
   <br />
   <% current_user.courses.each do |course| %>
     <div class="booyah-box main-bkrnd">
-      <h3 class="text-center course-titles">
+      <h3 class="text-center course-titles white-box">
         <%= link_to course.title, course_path(course) %>
       </h3>
-      <div class="row">
-        <div class="col-10 offset-1">
-           <br />
-           <%= image_tag course.image, class: 'img-fluid outline-photo' %>
-           <br />
-         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-sm-8 course-descriptions">
-          <%= course.description %>
+
+      <% if ! course.image.blank? %>
+        <div class="row">
+          <div class="col-10 offset-1">
+             <%= image_tag course.image, class: 'img-fluid outline-photo' %>
+           </div>
         </div>
-        <div class="col-12 col-sm-4 text-center">
-          <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
+        <br />
+      <% end %>
+
+
+      <div class="row">
+        <div class="col-sm-10 offset-1 col-12">
+          <div class="row">
+            <div class="col-12 col-sm-8 course-descriptions">
+              <%= course.description %>
+            </div>
+            <div class="col-12 col-sm-4 text-center">
+              <%= link_to "More Info...", course_path(course), class: 'btn btn-lg btn-primary' %>
+            </div>
+          </div>
         </div>
       </div>
+
+
       <hr class="col-8 offset-2">
       <br class="clr" />
     </div>
