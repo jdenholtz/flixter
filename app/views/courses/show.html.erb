@@ -65,17 +65,7 @@
         </div>
       </div>
     </div>
-
   </div>
-
-
-
-
-
-
-
-
-
 
   <br />
   <br />
@@ -95,15 +85,14 @@
           <% section.lessons.rank(:row_order).each do |lesson| %>
             <div class="col-12 col-sm-6">
               <div class="lesson text-center">
-                
                 <%= link_to lesson_path(lesson) do %>
                   <b><%= lesson.title %></b>
                   <hr id="hr-white">
                   <span id="lesson-subtitle"><%= lesson.subtitle %><br /></span>
-
                 <% end %>
                 <br />
-              </div>
+             </div>
+             <br />
             </div>
           <% end %>
         </div>
