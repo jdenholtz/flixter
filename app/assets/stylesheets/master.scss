@@ -170,6 +170,10 @@ ul .header .fa {
 .main-bkrnd {
   background: image_url('bkrnd-8.jpg') no-repeat center center fixed;
   border-radius: 10px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .white-box{
