@@ -76,7 +76,6 @@
           <% section.lessons.rank(:row_order).each do |lesson| %>
             <li data-update-url="<%= instructor_lesson_path(lesson) %>">
               <div class="row">
-                <br />
                 <div class="col-1">
                   <br />
                   <span class="fa fa-ellipsis-v"></span>
@@ -91,6 +90,7 @@
                   </p>
                 </div>
               </div>
+              <br />
             </li>
             <br class="clr" />
           <% end %>
